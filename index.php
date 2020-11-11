@@ -11,7 +11,7 @@ if(isset($_COOKIE['sc'])){
       $_SESSION['cart'] = array();
     }
 }else{
-  $_COOKIE['sc'] = 'sc-1';
+    setcookie('sc', 'sc-1', time() + (86400 * 30), "/");
 }
 ?>
 
