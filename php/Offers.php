@@ -25,8 +25,15 @@ class Offers extends ShoppingCart{
                 }else{
                     $finalPrice += $_SESSION['cart'][$product_key]['price'];
                 }
-            }else{
-                $finalPrice += $_SESSION['cart'][$product_key]['price'];
+            }else if($_SESSION['cart'][$product_key]['name'] === 'Orange'){
+                $nb_orange++;
+                if($nb_orange === self::ORANGE_OFFER){
+                    $finalPrice += 0;
+                    $nb_orange = 0;
+                    $_SESSION['cart'][$product_key]['price'] = 0;
+                }else{
+                    $finalPrice += $_SESSION['cart'][$product_key]['price'];
+                }
             }
         }
 
