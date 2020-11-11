@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 class ShoppingCart {
     
     static public function addProductToCart($product){

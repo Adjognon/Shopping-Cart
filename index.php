@@ -14,7 +14,7 @@ isset($_SESSION['cart']) ? $product_added = true : $product_added = false;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>OnlyPommesAndMangoes - Livraison gratuite 7j/7</title>
+    <title>Numbers Game - Michel Kodjo</title>
     <!-- MDB icon -->
     <link rel="icon" href="./img/logo/5-2-mango-png-picture-thumb.png" type="image/x-icon">
     <!-- Font Awesome -->
@@ -284,13 +284,52 @@ foreach($products_name as $product_name){
                 </div>
             </div>
         </div>
+        <button type="button" class="btn btn-primary offers-modal-launch-button" data-toggle="modal"
+            data-target="#modal_offers">Voir nos offres</button>
+        <div class="modal fade right" id="modal_offers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+
+            <!-- Add class .modal-side and then add class .modal-top-right (or other classes from list above) to set a position to the modal -->
+            <div class="modal-dialog modal-side modal-top-right" role="document">
+
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title w-100" id="myModalLabel">Nos Offres</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img class="offers-img" src="./img/products/580b57fbd9996e24bc43c11c.png" />
+                                </div>
+                                <div class="col-md-8 offer-text">
+                                    <span>Achetez une pomme, otenez-en une gratuitement</span>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <img class="offers-img" src="./img/products/orange.png" />
+                                </div>
+                                <div class="col-md-8 offer-text">
+                                    <span>Achetez deux oranges, otenez la 3iem gratuitement</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Compris</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
 
     </div>
-
-
 
     <!-- jQuery -->
     <script type="text/javascript" src="js/jquery.min.js"></script>

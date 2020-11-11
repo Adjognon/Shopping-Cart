@@ -39,6 +39,9 @@ class Offers extends ShoppingCart{
 
     }
 
+    $_SESSION['nb_products'] = (isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0);
+    $_SESSION['final_price'] = $finalPrice;
+
     }
 }
 
