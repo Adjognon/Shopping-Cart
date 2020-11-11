@@ -5,6 +5,14 @@ $productsObject = json_decode($products, true);
 $products_name = array_keys($productsObject);
 $product_added = false;
 isset($_SESSION['cart']) ? $product_added = true : $product_added = false;
+
+if(isset($_COOKIE['sc'])){
+    if(!$_COOKIE['sc'] === 'sc-1'){
+      $_SESSION['cart'] = array();
+    }
+}else{
+  $_COOKIE['sc'] = 'sc-1';
+}
 ?>
 
 <!DOCTYPE html>
