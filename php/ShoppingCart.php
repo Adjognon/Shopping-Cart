@@ -7,21 +7,8 @@ class ShoppingCart {
     static public function addProductToCart($product){
 
         if(!isset($_SESSION['cart'])){
-<<<<<<< HEAD
         $_SESSION['cart'] = array();
-        $_COOKIE['sc'] = 'sc-1';
-        }else{
-              if(isset($_COOKIE['sc'])){
-                      if(!$_COOKIE['sc'] === 'sc-1'){
-                        $_SESSION['cart'] = array();
-                      }
-                }
         }
-=======
-           $_SESSION['cart'] = array();
-        }  
->>>>>>> shopping-cart-functions
-
         array_push($_SESSION['cart'], $product);
         return true;
     }
