@@ -8,6 +8,7 @@ $product_added = false;
 if(isset($_COOKIE['sc'])){
     if($_COOKIE['sc'] !== 'sc-2'){
       $_SESSION['cart'] = array();
+      setcookie('sc', 'sc-2', time() + (86400 * 30), "/");
     }
 }else{
     setcookie('sc', 'sc-2', time() + (86400 * 30), "/");
