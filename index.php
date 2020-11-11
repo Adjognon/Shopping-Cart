@@ -4,14 +4,20 @@ $products = file_get_contents('products.json');
 $productsObject = json_decode($products, true);
 $products_name = array_keys($productsObject);
 $product_added = false;
-isset($_SESSION['cart']) ? $product_added = true : $product_added = false;
 
 if(isset($_COOKIE['sc'])){
-    if(!$_COOKIE['sc'] === 'sc-2'){
+    if($_COOKIE['sc'] !== 'sc-2'){
       $_SESSION['cart'] = array();
+      $product_added = true;
     }
 }else{
     setcookie('sc', 'sc-2', time() + (86400 * 30), "/");
+}
+
+if(isset($_SESSION['cart'])){
+    if(count($_SESSION['cart']) !== 0){
+        $product_added = true;
+    }
 }
 ?>
 
