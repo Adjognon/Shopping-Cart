@@ -8,6 +8,13 @@ class ShoppingCart {
 
         if(!isset($_SESSION['cart'])){
         $_SESSION['cart'] = array();
+        $_COOKIE['sc'] = 'sc-1';
+        }else{
+              if(isset($_COOKIE['sc'])){
+                      if(!$_COOKIE['sc'] === 'sc-1'){
+                        $_SESSION['cart'] = array();
+                      }
+                }
         }
 
         array_push($_SESSION['cart'], $product);
