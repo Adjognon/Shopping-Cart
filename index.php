@@ -6,8 +6,10 @@ $products_name = array_keys($productsObject);
 $product_added = false;
 
 if(isset($_COOKIE['sc'])){
+    
     if($_COOKIE['sc'] !== 'sc-1'){
       $_SESSION['cart'] = array();
+      setcookie('sc', 'sc-1', time() + (86400 * 30), "/");
     }
 }else{
     setcookie('sc', 'sc-1', time() + (86400 * 30), "/");
@@ -18,6 +20,7 @@ if(isset($_SESSION['cart'])){
         $product_added = true;
     }
 }
+
 ?>
 
 <!DOCTYPE html>
