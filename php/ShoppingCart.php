@@ -15,10 +15,10 @@ class ShoppingCart {
         
         $finalPrice = 0;
         if(isset($_SESSION['cart'])){
-        $products_name = array_keys($_SESSION['cart']);
+        $products_keys = array_keys($_SESSION['cart']);
         
-        foreach($products_name as $product_name){
-           $finalPrice += $_SESSION['cart'][$product_name]['price'];
+        foreach($products_keys as $product_key){
+           $finalPrice += $_SESSION['cart'][$product_key]['price'];
            
         }
     }
