@@ -6,7 +6,6 @@ class ShoppingCart {
 
         if(!isset($_SESSION['cart'])){
             $_SESSION['cart'] = array();
-            $_COOKIE['sc'] = 'sc-2';
         }
             
         array_push($_SESSION['cart'], $product);
