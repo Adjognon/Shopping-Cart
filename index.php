@@ -4,14 +4,20 @@ $products = file_get_contents('products.json');
 $productsObject = json_decode($products, true);
 $products_name = array_keys($productsObject);
 $product_added = false;
-isset($_SESSION['cart']) ? $product_added = true : $product_added = false;
 
 if(isset($_COOKIE['sc'])){
-    if(!$_COOKIE['sc'] === 'sc-1'){
+    if($_COOKIE['sc'] !== 'sc-1'){
       $_SESSION['cart'] = array();
+      $product_added = true;
     }
 }else{
     setcookie('sc', 'sc-1', time() + (86400 * 30), "/");
+}
+
+if(isset($_SESSION['cart'])){
+    if(count($_SESSION['cart']) !== 0){
+        $product_added = true;
+    }
 }
 ?>
 
@@ -112,7 +118,6 @@ foreach($products_name as $product_name){
                             <!-- Card content -->
                             <div class="card-body cart-body-style">
                                 <input type="hidden" name="scan" value="">
-
                                 <?php if($product_added AND $_SESSION['cart'] !== ''){
                                 for($i = (count($_SESSION['cart']) - 1); $i >= 0; $i-- ){
                                     $product = $_SESSION['cart'][$i];
